@@ -158,7 +158,7 @@ while 1:
             print("[+]Requests => " + url)
         try:
             domain = extract_domain(url)
-            print("[+]Domain " + domain)
+            #print("[+]Domain " + domain)
         except:
             pass
         
