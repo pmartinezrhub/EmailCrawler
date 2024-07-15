@@ -78,7 +78,8 @@ def extract_domain(url):
     try:
         domain = urlparse(url).netloc
         if domain:
-            return domain
+            withoutsubdomains = domain.split(".")[-2:]
+            return str(withoutsubdomains[-2] + "." + withoutsubdomains[-1])
     except:
         return None
 
@@ -157,6 +158,7 @@ while 1:
             print("[+]Requests => " + url)
         try:
             domain = extract_domain(url)
+            print("[+]Domain " + domain)
         except:
             pass
         
